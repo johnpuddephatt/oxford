@@ -1,0 +1,15 @@
+{
+  "stories": [
+    {% for story in site.stories %}
+      {
+        "id": "{{ story.slug }}",
+        "published": "{{ story.published }}",
+        "title": {{ story.title | smartify | jsonify }},
+        "url": "{{ site.url }}{{ story.url }}",
+        "intro": {{ story.intro | smartify | jsonify }},
+        "geoJsonPath": "{{ story.geoJsonPath}}"
+
+      }{% unless forloop.last == true %},{% endunless %}
+    {% endfor %}
+  ]
+}

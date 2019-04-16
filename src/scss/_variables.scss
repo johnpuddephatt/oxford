@@ -1,0 +1,44 @@
+/************
+***  Colours
+************/
+$light-green: #C6F0EB;
+$green: #75DACF;
+$blue: #45506B;
+$light-gray: #eeeeee;
+$medium-gray: #666666;
+
+/************
+***  Typography
+************/
+$base-font-color: $blue;
+$base-font-size: 1em;
+$modular-scale-ratio: 1.2;
+
+/************
+***  Misc. units
+************/
+$speed: 1s;
+$sidebar-width: 30vw;
+$sidebar-min-width: 15rem;
+
+/************
+***  Functions and mixins
+************/
+
+@function modular-scale(
+  $increment,
+  $value: $base-font-size,
+  $ratio: $modular-scale-ratio
+) {
+  @if $increment > 1 {
+    @for $i from 1 through $increment {
+      $value: $value * $ratio;
+    }
+  }
+  @if $increment < 0 {
+    @for $i from $increment through -1 {
+      $value: $value / $ratio;
+    }
+  }
+  @return $value;
+}

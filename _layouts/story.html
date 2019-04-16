@@ -1,0 +1,20 @@
+{
+  "id": "{{ page.slug }}",
+  "title": {{ page.title | smartify | jsonify }},
+  "url": "{{ page.url }}{{ story.url }}",
+  "intro": {{ page.intro | smartify | jsonify }},
+  "geoJsonPath": "{{ page.geoJsonPath}}",
+  "content": {{ content | smartify | jsonify }},
+  "articles": {
+    {% for article in page.articles %}
+    "{{ article.title | slugify }}":
+      {
+        "slug": "{{ article.title | slugify }}",
+        "title": {{ article.title | smartify | jsonify }},
+        "author": {{ article.author | smartify | jsonify }},
+        "content": {{ article.content | markdownify | jsonify }}
+      }
+      {% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  }
+}
