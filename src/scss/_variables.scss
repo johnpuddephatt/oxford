@@ -3,16 +3,26 @@
 ************/
 $light-green: #C6F0EB;
 $green: #75DACF;
+
 $blue: #45506B;
-$light-gray: #eeeeee;
-$medium-gray: #666666;
+// $dark-gray: #616B80;
+// $light-gray: #eAeCf1;
+// $medium-gray: #A2A8B4;
+$dark-gray: mix(white, $blue, 20);
+$medium-gray: mix(white, $blue, 40);
+$light-gray: mix(white, $blue, 75);
+
+
 
 /************
 ***  Typography
 ************/
-$base-font-color: $blue;
+$base-font-color: $dark-gray;
+$heading-font-color: $blue;
 $base-font-size: 1em;
 $modular-scale-ratio: 1.2;
+$base-line-height: 1.6;
+$heading-line-height: 1.3;
 
 /************
 ***  Misc. units

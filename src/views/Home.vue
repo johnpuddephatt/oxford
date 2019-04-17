@@ -6,7 +6,10 @@
         <h1 class="home-title"><span>Who</span>&nbsp;<span>Owns</span>&nbsp;<span>Oxford?</span></h1>
         <div class="home-subheading">
           <p class="home-subtitle">An exploration of land ownership in Oxford through six stories</p>
-          <router-link class="home-button" to="/stories">&rarr;</router-link>
+          <router-link class="home-button" to="/stories">
+            Enter
+            <svg xmlns="http://www.w3.org/2000/svg" width="812" height="594.2" viewBox="0 0 812 594.2"><path vector-effect="non-scaling-stroke" fill="none" stroke="#FFF" stroke-width="25" stroke-miterlimit="10" d="M0 297.5h805m0 4L603.6 4.8m0 584.7L805 292.8"/></svg>
+          </router-link>
         </div>
       </div>
 
@@ -81,12 +84,19 @@
     text-decoration: none;
     color: white;
     transition: background-color 1s ease, color 1s ease;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MTIiIGhlaWdodD0iNTk0LjIiIHZpZXdCb3g9IjAgMCA4MTIgNTk0LjIiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMCAyOTcuNWg4MDVNODA1IDMwMS41TDYwMy42IDQuOE02MDMuNiA1ODkuNUw4MDUgMjkyLjgiLz48L3N2Zz4=');
-    background-size: 50% auto;
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
+    svg {
+      position: absolute;
+      top: 20%;
+      left: 15%;
+      width: 60%;
+      height: 60%;
+      * {
+        stroke-width: 0.125rem;
+      }
+    }
     &:hover {
-      background-color: white;
+      background-color: $green;
     }
 
   }
@@ -179,27 +189,30 @@
 
       function drawDot(mouseX,mouseY){
         overlayCanvas.beginPath();
-        // overlayCanvas.arc(mouseX, mouseY, brushRadius, 0, 2*Math.PI, true);
+        // Snap to grid
          var newMouseX = Math.floor(mouseX/brushSize)*brushSize;
          var newMouseY = Math.floor(mouseY/brushSize)*brushSize;
 
         overlayCanvas.rect(newMouseX, newMouseY, brushSize, brushSize);
-        overlayCanvas.fillStyle = 'rgba(255,255,255,.5)';
+        overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        overlayCanvas.globalAlpha = 0.5;
+
         overlayCanvas.globalCompositeOperation = "destination-out";
         overlayCanvas.fill();
 
         //big background square
         // overlayCanvas.beginPath();
         // overlayCanvas.rect((newMouseX - 2 * brushSize), (newMouseY - 2 * brushSize), 5 * brushSize, 5  * brushSize);
-
-        overlayCanvas.fillStyle = 'rgba(255,255,255,.05)';
-        overlayCanvas.fill();
+        // overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        // overlayCanvas.globalAlpha = 0.05;
+        // overlayCanvas.fill();
 
         //medium background square
         overlayCanvas.beginPath();
         overlayCanvas.rect((newMouseX - brushSize), (newMouseY - brushSize), 3 * brushSize, 3 * brushSize);
 
-        overlayCanvas.fillStyle = 'rgba(255,255,255,.2)';
+        overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        overlayCanvas.globalAlpha = 0.2;
         overlayCanvas.fill();
 
         //top background square
@@ -214,7 +227,8 @@
         overlayCanvas.rect((newMouseX - 2 * brushSize), (newMouseY), brushSize, brushSize);
         overlayCanvas.rect((newMouseX + 2 * brushSize), (newMouseY), brushSize, brushSize);
 
-        overlayCanvas.fillStyle = 'rgba(255,255,255,.05)';
+        overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        overlayCanvas.globalAlpha = 0.05;
         overlayCanvas.fill();
 
       }
@@ -238,15 +252,17 @@
         overlayCanvas.beginPath();
         overlayCanvas.rect(0, 0, overlay.width, overlay.height);
         overlayCanvas.globalCompositeOperation = "source-over";
-        overlayCanvas.fillStyle = "rgba(69,80,107,.05)";
+        overlayCanvas.fillStyle = "rgb(69,80,107)";
+        overlayCanvas.globalAlpha = 0.1;
         overlayCanvas.fill();
-      },42);
+      },80);
 
       // initial fill
       overlayCanvas.beginPath();
       overlayCanvas.rect(0, 0, overlay.width, overlay.height);
       overlayCanvas.globalCompositeOperation = "source-over";
-      overlayCanvas.fillStyle = "rgba(69,80,107,1)";
+      overlayCanvas.fillStyle = "rgb(69,80,107)";
+      overlayCanvas.globalAlpha = 1;
       overlayCanvas.fill();
     }
   }

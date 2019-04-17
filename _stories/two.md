@@ -1,7 +1,7 @@
 ---
-published: true
+coming_soon: true
 title: The university
-intro: How the University of Oxford shapes the land
+intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam.
 geoJsonPath: /uploads/Oxford_Fringe_2.geojson
 articles:
 - image: 'http://placehold.it/300x300'

@@ -1,7 +1,7 @@
 ---
-published: false
+coming_soon: false
 title: The inner city
-intro: Navigating the urban maze
+intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam.
 geoJsonPath: /uploads/Oxford_Fringe_3.geojson
 articles:
 - image: 'http://placehold.it/300x300'

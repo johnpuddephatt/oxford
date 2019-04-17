@@ -12,6 +12,7 @@
         "slug": "{{ article.title | slugify }}",
         "title": {{ article.title | smartify | jsonify }},
         "author": {{ article.author | smartify | jsonify }},
+        "image": {{ article.image | jsonify }},
         "content": {{ article.content | markdownify | jsonify }}
       }
       {% if forloop.last == false %},{% endif %}

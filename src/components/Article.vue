@@ -1,9 +1,14 @@
 <template>
   <div class="article">
     <div class="article--inner">
-      <div>{{ article.author }}</div>
-      <h2 class="article-title">{{ article.title }}</h2>
-      <div class="entry-content" v-html="article.content"></div>
+      <div class="article--image">
+        <img :src="article.image" />
+      </div>
+      <div class="article--content">
+        <h2 class="article--title">{{ article.title }}</h2>
+        <div class="article--author">{{ article.author }}</div>
+        <div class="entry--content" v-html="article.content"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -55,14 +60,37 @@ export default {
 }
 
 .article--inner {
-  max-width: 48em;
-  margin: 0 auto;
-  height: 100%;
-  border: 4em solid $light-green;
+  margin: 0;
+  padding: 6em 4em;
+  display: flex;
+  flex-direction: row;
 }
 
-.article-title {
-  font-size: 3em;
+.article--content {
+  max-width: 48em;
+}
+
+.article--image {
+  width: 6em;
+  margin-right: 1em;
+  flex: 0 0 6em;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+
+.article--title {
+  font-size: modular-scale(5);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.article--author {
+  font-size: modular-scale(0);
+  font-weight: 700;
   margin-top: .5em;
+  margin-bottom: 1.5em;
 }
 </style>

@@ -3,7 +3,7 @@
     {% for story in site.stories %}
       {
         "id": "{{ story.slug }}",
-        "published": "{{ story.published }}",
+        "coming_soon": "{{ story.coming_soon }}",
         "title": {{ story.title | smartify | jsonify }},
         "url": "{{ site.url }}{{ story.url }}",
         "intro": {{ story.intro | smartify | jsonify }},

@@ -1,33 +1,11 @@
 ---
-published: true
-title: Oxford’s fringe
-intro: Exploring what goes on at the edges of the city
+coming_soon: false
+title: Oxford's fringe
+intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam.
 geoJsonPath: /uploads/Oxford_Fringe.geojson
 articles:
-- image: 'http://placehold.it/300x300'
-  title: Opinion piece 1
-  author: John Puddephatt
-  content: |
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
-
-- image: 'http://placehold.it/300x300'
-  title: Opinion piece 2
+- image: '/uploads/monbiot300.jpg'
+  title: We must protect it
   author: George Monbiot
   content: |
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
@@ -35,5 +13,31 @@ articles:
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+- image: '/uploads/dorling.jpeg'
+  title: It's time to relax
+  author: Danny Dorling
+  content: |
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
 ---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam. Facere necessitatibus sint sequi laudantium officiis enim odio, nemo itaque aperiam praesentium at nam autem sunt recusandae?
