@@ -34,9 +34,9 @@
   }
 
   .home-title {
-    font-size: 5.5rem;
+    font-size: modular-scale(10);
     text-transform: uppercase;
-    margin-top: 0;
+    margin-top: .5em;
     margin-bottom: 0;
     text-shadow: -.25em .25em 0 black;
     span {

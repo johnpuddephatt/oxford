@@ -46,15 +46,17 @@ html, body {
 }
 
 #app {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'DIN-Black', Helvetica, Arial, sans-serif;
+  font-family: $heading-font-family;
   color: $heading-font-color;
   line-height: $heading-line-height;
+  letter-spacing: 0.03em;
+
 }
 
 a {
