@@ -37,7 +37,7 @@
     font-size: modular-scale(10);
     text-transform: uppercase;
     margin-top: .5em;
-    margin-bottom: 0;
+    margin-bottom: .25em;
     text-shadow: -.25em .25em 0 black;
     span {
       opacity: 0;
@@ -57,6 +57,7 @@
     opacity: 0;
     transform: translateY(-3em);
     text-align: center;
+    font-weight: 500;
     font-size: 1.3em;
   }
 
