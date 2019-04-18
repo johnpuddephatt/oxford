@@ -233,8 +233,8 @@ p {
     left: -2em;
     top: -1.5em;
     bottom: -1.5em;
-    right: -12em;
-    background-image: linear-gradient(to right, $green 75%, transparentize($green, 1) 100%);
+    right: -6em;
+    background-image: linear-gradient(to right, $green 85%, transparentize($green, 1) 100%);
     transform: translateX(-100%);
     transition: transform 1s ease;
   }

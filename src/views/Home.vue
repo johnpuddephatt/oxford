@@ -5,7 +5,7 @@
       <div class="home-heading-wrapper">
         <h1 class="home-title"><span>Who</span>&nbsp;<span>Owns</span>&nbsp;<span>Oxford?</span></h1>
         <div class="home-subheading">
-          <p class="home-subtitle">An exploration of land ownership in Oxford through six stories</p>
+          <p class="home-subtitle">An exploration of land ownership in and around Oxford told through six stories</p>
           <router-link class="home-button" to="/stories">
             Enter
             <svg xmlns="http://www.w3.org/2000/svg" width="812" height="594.2" viewBox="0 0 812 594.2"><path vector-effect="non-scaling-stroke" fill="none" stroke="#FFF" stroke-width="25" stroke-miterlimit="10" d="M0 297.5h805m0 4L603.6 4.8m0 584.7L805 292.8"/></svg>
@@ -30,14 +30,14 @@
 
   .home-title, .home-subtitle {
     pointer-events: none;
-    color: white;
   }
 
   .home-title {
+    color: white;
     font-size: modular-scale(10);
     text-transform: uppercase;
     margin-top: .5em;
-    margin-bottom: .25em;
+    margin-bottom: 0;
     text-shadow: -.25em .25em 0 black;
     span {
       opacity: 0;
@@ -55,15 +55,19 @@
   .home-subheading {
     animation: fadeInSubheading 1s 6s forwards ease-out;
     opacity: 0;
-    transform: translateY(-3em);
+    transform: translateY(-2em);
     text-align: center;
     font-weight: 500;
     font-size: 1.3em;
+    margin-top: .25em;
   }
 
   .home-subtitle {
-    margin-top: 0;
-    margin-bottom: 2em;
+    font-size: modular-scale(1);
+    margin: 0 auto 2em;
+    color: $light-gray;
+    max-width: 25em;
+    line-height: $heading-line-height;
   }
 
   .home-heading-wrapper {
@@ -120,7 +124,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-image: radial-gradient(circle at center, transparentize($blue,1), transparentize($blue,0.1));
+      background-image: radial-gradient(circle at center, transparentize($blue,1), transparentize($blue,0.2));
       z-index: 8;
     }
   }

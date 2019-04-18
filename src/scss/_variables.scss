@@ -1,8 +1,11 @@
 /************
 ***  Colours
 ************/
-$light-green: #C6F0EB;
-$green: #75DACF;
+
+// $green: #75DACF;
+$green: #8fe5ad;
+
+$light-green: mix(white, $green, 80);
 
 $blue: #45506B;
 // $dark-gray: #616B80;
