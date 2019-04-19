@@ -3,9 +3,9 @@
     <div id="home">
       <canvas id="overlay"></canvas>
       <div class="home-heading-wrapper">
-        <h1 class="home-title"><span>Who</span>&nbsp;<span>Owns</span>&nbsp;<span>Oxford?</span></h1>
+        <h1 class="home-title"><span>Who</span>&nbsp;<span>Owns</span><span>Oxford</span></h1>
         <div class="home-subheading">
-          <p class="home-subtitle">An exploration of land ownership in and around Oxford told through six stories</p>
+          <p class="home-subtitle">An exploration of land ownership across Oxford told through six stories</p>
           <router-link class="home-button" to="/stories">
             Enter
             <svg xmlns="http://www.w3.org/2000/svg" width="812" height="594.2" viewBox="0 0 812 594.2"><path vector-effect="non-scaling-stroke" fill="none" stroke="#FFF" stroke-width="25" stroke-miterlimit="10" d="M0 297.5h805m0 4L603.6 4.8m0 584.7L805 292.8"/></svg>
@@ -34,26 +34,42 @@
 
   .home-title {
     color: white;
-    font-size: modular-scale(10);
+    font-size: modular-scale(9);
     text-transform: uppercase;
     margin-top: .5em;
-    margin-bottom: 0;
-    text-shadow: -.25em .25em 0 black;
+    margin-bottom: .25em;
+    text-shadow: -.1em .1em 0 transparentize($blue,.85);
+    text-align: center;
+    line-height: 1;
+    &.show span {
+      opacity: 1;
+    }
     span {
       opacity: 0;
-      animation: text-flicker 2.5s linear forwards;
+      transition: opacity 1.5s cubic-bezier(0.62, 0.02, 0.34, 1);
+      animation: shadow-flicker 1.5s ease-out forwards;
       animation-delay: 1s;
+      transition-delay: 1s;
+      // animation: text-flicker 2.5s linear forwards;
+      // animation-delay: 1s;
       &:nth-child(2) {
-        animation-delay: 1.75s;
+        animation-delay: 2s;
+        // animation-delay: 1.75s;
+        transition-delay: 2s;
       }
       &:nth-child(3) {
-        animation-delay: 2.5s;
+        display: block;
+        font-size: modular-scale(2);
+        animation-delay: 3s;
+        // animation-delay: 2.5s;
+        transition-delay: 3s;
+        position: relative;
       }
     }
   }
 
   .home-subheading {
-    animation: fadeInSubheading 1s 6s forwards ease-out;
+    animation: fadeInSubheading 1s 5s forwards ease-out;
     opacity: 0;
     transform: translateY(-2em);
     text-align: center;
@@ -66,12 +82,12 @@
     font-size: modular-scale(1);
     margin: 0 auto 2em;
     color: $light-gray;
-    max-width: 25em;
+    max-width: 20em;
     line-height: $heading-line-height;
   }
 
   .home-heading-wrapper {
-    animation: moveDownHeadingWrapper 1s 6s forwards ease-out;
+    animation: moveDownHeadingWrapper 1s 5s forwards ease-out;
   }
 
   .home-button {
@@ -216,7 +232,8 @@
         overlayCanvas.beginPath();
         overlayCanvas.rect((newMouseX - brushSize), (newMouseY - brushSize), 3 * brushSize, 3 * brushSize);
 
-        overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        // overlayCanvas.fillStyle = 'rgb(255,255,255)';
+        // overlayCanvas.fillStyle = 'rgb(166,244,190)';
         overlayCanvas.globalAlpha = 0.2;
         overlayCanvas.fill();
 
@@ -269,6 +286,9 @@
       overlayCanvas.fillStyle = "rgb(69,80,107)";
       overlayCanvas.globalAlpha = 1;
       overlayCanvas.fill();
+
+      var homeTitle = document.querySelector('.home-title');
+      homeTitle.classList.add('show');
     }
   }
 
