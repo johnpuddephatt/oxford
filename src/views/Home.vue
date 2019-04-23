@@ -145,6 +145,17 @@
       background-image: radial-gradient(circle at center, transparentize($blue,1), transparentize($blue,0.2));
       z-index: 8;
     }
+    &::before {
+      content: '';
+      position: fixed;
+      // z-index: 99;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to right, transparentize($blue,.65) 1px, #0000 1px), linear-gradient(to bottom, transparentize($blue,0.65) 1px, #0000 1px);
+      background-size: 30px 30px;
+    }
   }
 
   #overlay {
