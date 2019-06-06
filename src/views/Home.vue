@@ -5,7 +5,7 @@
       <div class="home-heading-wrapper">
         <h1 class="home-title"><span>Who</span>&nbsp;<span>Owns</span><span>Oxford</span></h1>
         <div class="home-subheading">
-          <p class="home-subtitle">An exploration of land ownership across Oxford told through six stories</p>
+          <p class="home-subtitle">Exploring land ownership across the county through six stories</p>
           <router-link class="home-button" to="/stories">
             Enter
             <!-- <svg xmlns="http://www.w3.org/2000/svg" width="812" height="594.2" viewBox="0 0 812 594.2"><path vector-effect="non-scaling-stroke" fill="none" stroke="#FFF" stroke-width="25" stroke-miterlimit="10" d="M0 297.5h805m0 4L603.6 4.8m0 584.7L805 292.8"/></svg> -->
@@ -35,7 +35,13 @@
 
   .home-title {
     color: white;
-    font-size: modular-scale(9);
+    font-size: modular-scale(6);
+    @include min-width($medium-screen) {
+      font-size: modular-scale(8);
+    }
+    @include min-width($large-screen) {
+      font-size: modular-scale(9);
+    }
     text-transform: uppercase;
     margin-top: .5em;
     margin-bottom: .25em;
@@ -62,7 +68,6 @@
         display: block;
         font-size: modular-scale(2);
         animation-delay: 3s;
-        // animation-delay: 2.5s;
         transition-delay: 3s;
         position: relative;
       }
@@ -75,16 +80,18 @@
     transform: translateY(-2em);
     text-align: center;
     font-weight: 500;
-    font-size: 1.3em;
     margin-top: .25em;
   }
 
   .home-subtitle {
-    font-size: modular-scale(1);
+    font-size: modular-scale(-1);
+    @include min-width($medium-screen) {
+      font-size: modular-scale(1);
+    }
     margin: 0 auto 2em;
     color: $light-gray;
     max-width: 20em;
-    line-height: $heading-line-height;
+    // line-height: $heading-line-height;
   }
 
   .home-heading-wrapper {
@@ -95,10 +102,16 @@
     text-indent: -9999px;
     margin: 0 auto;
     display: block;
-    height: 6rem;
-    width: 6rem;
-    line-height: 6rem;
-    font-size: 3rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    @include min-width($medium-screen) {
+      height: 6rem;
+      width: 6rem;
+      line-height: 6rem;
+      font-size: 3rem;
+    }
     border-radius: 50%;
     border: .1rem solid white;
     pointer-events: all;
@@ -144,6 +157,7 @@
       right: 0;
       background-image: radial-gradient(circle at center, transparentize($blue,1), transparentize($blue,0.2));
       z-index: 8;
+      opacity: .75;
     }
     &::before {
       content: '';

@@ -3,7 +3,7 @@
     <div class="sidebar sidebar__stories" v-if="showSidebar" key="sidebar">
       <div class="sidebar--header">
         <h3 class="sidebar--title">Who Owns Oxford?</h3>
-        <p class="sidebar--subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam.</p>
+        <p class="sidebar--subtitle">Each story explores a particular area, or issue.</p>
       </div>
       <div class="sidebar--scroller" v-if="dataLoaded">
         <div class="sidebar--item-list">
@@ -25,11 +25,11 @@
         </div>
       </div>
       <button class="sidebar--hide-button" v-on:click="showSidebar = false">
-        « Hide sidebar
+        <span>«</span> Hide sidebar
       </button>
     </div>
     <button class="sidebar--show-button" v-on:click="showSidebar = true" v-else key="show-sidebar">
-      Show sidebar
+      Show sidebar <span>»</span>
     </button>
   </transition>
 </template>

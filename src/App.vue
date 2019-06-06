@@ -27,6 +27,7 @@
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import 'scss/_variables.scss';
 @import 'scss/_transitions.scss';
 
@@ -35,11 +36,17 @@
  box-sizing: border-box;
 }
 
+html {
+  font-size: .8333 * $base-font-size;
+  @include min-width($medium-screen) {
+  font-size: $base-font-size;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-size: $base-font-size;
   color: $base-font-color;
   line-height: $base-line-height;
   letter-spacing: 0.01em;
@@ -68,6 +75,23 @@ p {
 }
 
 .sidebar {
+  padding-top: 1em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  z-index: 9;
+  height: 65vh;
+  width: 100vw;
+  @include min-width($medium-screen) {
+    width: $sidebar-width;
+    min-width: $sidebar-min-width;
+    box-shadow: $sidebar-box-shadow;
+    top: 0;
+    height: 100vh;
+  }
   &::after{
     background-color: white;
     content: '';
@@ -79,22 +103,14 @@ p {
     z-index: -1;
     border-top: 1.5em solid $blue;
   }
-  width: $sidebar-width;
-  min-width: $sidebar-min-width;
-  padding-top: 1em;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  overflow: visible;
-  z-index: 9;
 }
 
 .sidebar--title {
   font-size: modular-scale(3);
-  margin-top: .25em;
+  margin-top: 0;
+  @include min-width($medium-screen) {
+    margin-top: .25em;
+  }
   margin-bottom: 0;
 }
 
@@ -104,7 +120,13 @@ p {
 }
 
 .sidebar--header {
-  padding: 2em 2em 0;
+  padding: 1em 1em 0;
+  @include min-width($medium-screen) {
+    padding: 2em 1em 0;
+  }
+  @include min-width($large-screen) {
+    padding: 2em 2em 0;
+  }
   p:last-child {
     margin-bottom: 0;
   }
@@ -112,7 +134,10 @@ p {
 
 .sidebar--body {
   flex: 1 1 auto;
-  padding: 0 2em;
+  padding: 0 1em;
+  @include min-width($large-screen) {
+    padding: 0 2em;
+  }
 }
 
 .sidebar--hide-button,
@@ -129,6 +154,12 @@ p {
   border-top: 1px solid $light-gray;
   color: $medium-gray;
   transition: color $speed ease;
+  span {
+    display: none;
+    @include min-width($medium-screen) {
+      display: inline;
+    }
+  }
   &:hover {
     color: $blue;
   }
@@ -139,7 +170,9 @@ p {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: auto;
+  @include min-width($medium-screen) {
+    width: auto;
+  }
   border: 1px solid $light-gray;
 }
 
@@ -156,16 +189,20 @@ p {
 .sidebar--item-list {
   position: relative;
   z-index: 1;
-
-  padding: 1em 2em 0;
+  padding: 0 1em;
   margin-top: auto;
+  @include min-width($large-screen) {
+    padding: 0 2em;
+  }
 }
 
 .sidebar--scroller {
   flex: 1;
   overflow: hidden;
   position: relative;
-  margin-top: .5em;
+  @include min-width($medium-screen) {
+    margin-top: .5em;
+  }
   > * {
      height: 100%;
      overflow-y: auto;
@@ -191,7 +228,10 @@ p {
 }
 
 .sidebar--item-list--item {
-  margin: 2.5em 0;
+  margin: 1em 0;
+  @include min-width($medium-screen) {
+    margin: 2.5em 0;
+  }
   .coming-soon * {
     color: $light-gray;
   }
@@ -201,14 +241,20 @@ p {
   &:last-child {
     margin-bottom: 1.25em;
   }
-  .has-icon {
-    padding-left: 2.75em;
-    position: relative;
+  @include min-width($large-screen) {
+    .has-icon {
+      padding-left: 2.75em;
+      position: relative;
+    }
   }
 
 }
 
 .sidebar--item--icon {
+  display: none;
+  @include min-width($large-screen) {
+    display: block;
+  }
   width: 2em;
   height: auto;
   position: absolute;
@@ -231,9 +277,14 @@ p {
     position: absolute;
     z-index: -1;
     left: -2em;
-    top: -1.5em;
-    bottom: -1.5em;
-    right: -6em;
+    top: -.5em;
+    bottom: -.5em;
+    right: 0em;
+    @include min-width($medium-screen) {
+      top: -1.5em;
+      bottom: -1.5em;
+      right: -6em;
+    }
     background-image: linear-gradient(to right, $green 85%, transparentize($green, 1) 100%);
     transform: translateX(-100%);
     transition: transform 1s ease;

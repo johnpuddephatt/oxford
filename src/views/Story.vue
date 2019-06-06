@@ -1,6 +1,7 @@
 <template>
   <transition appear name="slide-in-out">
     <div class="sidebar sidebar__story" v-if="showSidebar" key="sidebar">
+
       <div class="sidebar--header">
         <router-link class="sidebar--back" :to="{ name: 'stories'}">« View all stories</router-link>
         <h2 class="sidebar--title">{{ story.title }}</h2>
@@ -24,19 +25,18 @@
       </div>
 
       <button class="sidebar--hide-button" v-on:click="showSidebar = false">
-        « Hide sidebar
+        <span>«</span> Hide sidebar
       </button>
 
 
-
       <transition name="slide-in-out">
-        <Article v-bind:article="story.articles[slug]" v-if="slug" v-bind:key="slug" />
+        <Article v-bind:article="story.articles[slug]" v-if="slug && dataLoaded" v-bind:storyID="id" v-bind:key="slug" />
       </transition>
 
     </div>
 
     <button class="sidebar--show-button" v-on:click="showSidebar = true" v-else key="show-sidebar">
-      Show sidebar
+      Show sidebar <span>»</span>
     </button>
   </transition>
 </template>
@@ -66,7 +66,7 @@ export default {
         // window.setTimeout(() => {
           this.story = result.data,
           this.dataLoaded = true;
-          window.foo = result.data.articles;
+          // window.foo = result.data.articles;
           this.$emit('mapLayerChange', this.story.geoJsonPath)
         // }, 500);
       });
@@ -92,6 +92,10 @@ export default {
 }
 
 .article-image {
+  display: none;
+  @include min-width($large-screen) {
+    display: block;
+  }
   width: 4em;
   height: 4em;
   border-radius: 50%;
