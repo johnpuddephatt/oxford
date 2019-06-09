@@ -85,15 +85,15 @@ export default {
       },
       colors: {
         Charity: '#A3E4B6',
-        Utility: '#87A159',
-        Farm: '#83D6C1',
+        Utility: '#6F6F9C',
+        Farm: '#4B7E56',
         Investor: '#F8B051',
-        Developer: '#ECBC6B',
-        Estate: '#CF5A5C',
-        Public: '#B05578',
+        Developer: '#FE5A22',
+        Estate: '#FB6768',
+        Public: '#94BB72',
         Industry: '#904C7A',
-        College: '#6D406B',
-        Church: '#41324D'
+        College: '#357790',
+        Church: '#F4E488'
       }
     };
   },
@@ -161,7 +161,7 @@ export default {
       }
       else {
         return (feature, layer) => {
-          layer.bindTooltip('<div>Owner: ' + feature.properties.owner + '</div><div>Type: ' + feature.properties.ownertype + '</div>', { permanent: false, sticky: true });
+          layer.bindTooltip('<div>Owner: ' + feature.properties.owner + '</div><div>Type: ' + feature.properties.ownertype + '</div><div>Source: ' + feature.properties.source + '</div>', { permanent: false, sticky: true });
           this.colors[feature.properties.type];
           layer.options.fillColor = this.colors[feature.properties.ownertype];
         };
@@ -190,6 +190,13 @@ export default {
 
   .leaflet-interactive {
     animation: fadeIn 2s ease;
+    opacity: 0.5;
+    stroke-width: .15em;
+    stroke: currentColor;
+    transition: opacity 1s ease;
+    &:hover {
+      opacity: 1;
+    }
   }
 
   @keyframes fadeIn {

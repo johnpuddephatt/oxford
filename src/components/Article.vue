@@ -45,7 +45,6 @@ export default {
   overflow-y: auto;
   z-index: 999;
   @include min-width($medium-screen) {
-    top: -1.5em;
     left: auto;
     z-index: -1;
     width: calc(100% - #{$sidebar-width});

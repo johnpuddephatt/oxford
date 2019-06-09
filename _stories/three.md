@@ -1,5 +1,5 @@
 ---
-coming_soon: false
+coming_soon: true
 title: The inner city
 intro: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor, quae sed ipsam.
 geoJsonPath: /uploads/Oxford_Fringe_3.geojson
