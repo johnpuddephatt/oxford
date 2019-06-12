@@ -34,6 +34,10 @@
   }
 }
 
+.sidebar__story.slide-in-out-enter-active {
+  transition-delay: 1.5s;
+}
+
 // In only, hold on out
 
 .slide-in-enter-active,

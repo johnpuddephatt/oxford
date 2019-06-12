@@ -81,7 +81,7 @@ p {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden;
   z-index: 9;
   height: 65vh;
   width: 100vw;
@@ -233,7 +233,8 @@ p {
     margin: 2.5em 0;
   }
   .coming-soon * {
-    color: $light-gray;
+    // color: $light-gray;
+    opacity: .6;
   }
   &:first-child {
     // margin-top: 1.25em;
@@ -279,15 +280,15 @@ p {
     left: -2em;
     top: -.5em;
     bottom: -.5em;
-    right: 0em;
+    right: -30%;
     @include min-width($medium-screen) {
       top: -1.5em;
       bottom: -1.5em;
-      right: -6em;
+      right: -30%;
     }
-    background-image: linear-gradient(to right, $green 85%, transparentize($green, 1) 100%);
+    background-image: linear-gradient(to right, $green 80%, transparentize($green, 1) 100%);
     transform: translateX(-100%);
-    transition: transform 1s ease;
+    transition: transform .5s ease;
   }
   &:hover,
   &:focus {
@@ -309,6 +310,7 @@ p {
 .sidebar--item-list--index {
   font-size: modular-scale(-1);
   .badge {
+    opacity: 1 !important;
     background-color: $light-gray;
     display: inline-block;
     border-radius: 3px;
