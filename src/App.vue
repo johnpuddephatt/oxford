@@ -2,7 +2,7 @@
   <div id="app">
     <Map v-bind:geoJsonPath="geoJsonPath"></Map>
     <router-view @mapLayerChange="onMapLayerChange" v-bind:showSidebar="showSidebar" v-bind:mapDataLoaded="mapDataLoaded" />
-    <button class="sidebar--toggle-button" v-bind:class="{sidebarOut: showSidebar, mapDataLoaded: mapDataLoaded}" aria-label="Toggle sidebar" v-on:click="showSidebar = !showSidebar" key="toggle-sidebar">
+    <button v-if="this.$route.name != 'home'" class="sidebar--toggle-button" v-bind:class="{sidebarOut: showSidebar, mapDataLoaded: mapDataLoaded}" aria-label="Toggle sidebar" v-on:click="showSidebar = !showSidebar" key="toggle-sidebar">
       &lt;
     </button>
   </div>
@@ -19,7 +19,8 @@
     data () {
       return {
         geoJsonPath: '',
-        showSidebar: true
+        showSidebar: true,
+
       }
     },
     computed: {
