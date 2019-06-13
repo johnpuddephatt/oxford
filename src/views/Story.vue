@@ -1,7 +1,6 @@
 <template>
   <transition appear name="slide-in-out">
-    <div class="sidebar sidebar__story" v-if="showSidebar" key="sidebar">
-
+    <div v-bind:class="{mapDataLoaded: mapDataLoaded}" class="sidebar sidebar__story" v-if="showSidebar" key="sidebar">
       <div class="sidebar--header">
         <router-link class="sidebar--back" :to="{ name: 'stories'}">« View all stories</router-link>
         <h2 class="sidebar--title">{{ story.title }}</h2>
@@ -24,20 +23,12 @@
         </div>
       </div>
 
-      <button class="sidebar--hide-button" v-on:click="showSidebar = false">
-        <span>«</span> Hide sidebar
-      </button>
-
-
       <transition name="slide-in-out">
         <Article v-bind:article="story.articles[slug]" v-if="slug && dataLoaded" v-bind:storyID="id" v-bind:key="slug" />
       </transition>
 
     </div>
 
-    <button class="sidebar--show-button" v-on:click="showSidebar = true" v-else key="show-sidebar">
-      Show sidebar <span>»</span>
-    </button>
   </transition>
 </template>
 
@@ -46,7 +37,7 @@ import Article from '../components/Article.vue'
 
 export default {
   name: 'story',
-  props: ['geoJsonPath','id', 'slug'],
+  props: ['geoJsonPath','id', 'slug','showSidebar','mapDataLoaded'],
   components: {
     Article
   },
@@ -54,7 +45,6 @@ export default {
     return {
       story: '',
       dataLoaded : false,
-      showSidebar: true
     }
   },
   created() {

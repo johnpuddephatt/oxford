@@ -34,7 +34,10 @@
   }
 }
 
-.sidebar__story.slide-in-out-enter-active {
+.sidebar.slide-in-out-enter-active {
+  transition-delay: 0s;
+}
+.sidebar.mapDataLoaded.slide-in-out-enter-active {
   transition-delay: 1.5s;
 }
 

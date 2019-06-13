@@ -1,9 +1,10 @@
 <template>
   <transition appear name="slide-in-out">
-    <div class="sidebar sidebar__stories" v-if="showSidebar" key="sidebar">
+    <div v-bind:class="{mapDataLoaded: mapDataLoaded}" class="sidebar sidebar__stories" v-if="showSidebar" key="sidebar">
       <div class="sidebar--header">
+
         <h3 class="sidebar--title">Who Owns Oxford?</h3>
-        <p class="sidebar--subtitle">Each story explores a particular area, or issue.</p>
+        <p class="sidebar--subtitle">Each of the stories below explores a particular area, or issue.</p>
       </div>
       <div class="sidebar--scroller" v-if="dataLoaded">
         <div class="sidebar--item-list">
@@ -24,24 +25,21 @@
           </div>
         </div>
       </div>
-      <button class="sidebar--hide-button" v-on:click="showSidebar = false">
-        <span>«</span> Hide sidebar
-      </button>
+
     </div>
-    <button class="sidebar--show-button" v-on:click="showSidebar = true" v-else key="show-sidebar">
-      Show sidebar <span>»</span>
-    </button>
+
   </transition>
+
 </template>
 
 <script>
 export default {
   name: 'stories',
+  props: ['showSidebar','mapDataLoaded'],
   data() {
     return {
       dataLoaded: false,
       stories: [],
-      showSidebar: true
     }
   },
   created() {

@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Map v-bind:geoJsonPath="geoJsonPath"></Map>
-    <router-view @mapLayerChange="onMapLayerChange"/>
+    <router-view @mapLayerChange="onMapLayerChange" v-bind:showSidebar="showSidebar" v-bind:mapDataLoaded="mapDataLoaded" />
+    <button class="sidebar--toggle-button" v-bind:class="{sidebarOut: showSidebar, mapDataLoaded: mapDataLoaded}" aria-label="Toggle sidebar" v-on:click="showSidebar = !showSidebar" key="toggle-sidebar">
+      &lt;
+    </button>
   </div>
 </template>
 
@@ -16,6 +19,16 @@
     data () {
       return {
         geoJsonPath: '',
+        showSidebar: true
+      }
+    },
+    computed: {
+      mapDataLoaded: function() {
+        if(this.geoJsonPath) {
+          return true;
+        } else {
+          return false;
+        }
       }
     },
     methods: {
@@ -138,6 +151,62 @@ p {
   @include min-width($large-screen) {
     padding: 0 2em;
   }
+}
+
+.sidebar--toggle-button {
+  border: none;
+  position: fixed;
+  text-indent: -9999px;
+  z-index: 99;
+  background-color: white;
+  -webkit-appearance: none;
+  display: block;
+  padding: .5em;
+  width: 4em;
+  height: 4em;
+  right: 1em;
+  bottom: 0;
+  @include min-width($medium-screen) {
+    right: auto;
+    left: 0;
+    bottom: 0;
+  }
+  transition: all $speed ease;
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    @include min-width($medium-screen) {
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    text-indent: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left:12px solid $blue;
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.sidebar:not(.slide-in-out-leave-active) ~ .sidebar--toggle-button {
+  bottom: 65vh;
+  &::before {
+    transform: translate(-50%,-50%) rotate(90deg);
+  }
+  @include min-width($medium-screen) {
+    left: $sidebar-width;
+    bottom: 0;
+    &::before {
+      transform: translate(-50%,-50%) rotate(180deg);
+    }
+  }
+
+
 }
 
 .sidebar--hide-button,

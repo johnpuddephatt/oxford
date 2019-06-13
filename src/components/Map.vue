@@ -72,7 +72,7 @@ export default {
       enableTooltip: true,
       center: L.latLng(51.7520, -1.2577),
       url: 'https://api.mapbox.com/styles/v1/johnpuddephatt/cjtajqi1z19f31gl80guf6t1k/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnB1ZGRlcGhhdHQiLCJhIjoiY2p0YWpidHBzMDZuajN5cGZ1cjJ1NDQ3dCJ9.KfXAwXnUBlD8ZUBXbl6Yxw',
-      attribution: 'Reproduced with permission of <a href="https://www.gov.uk/guidance/inspire-index-polygons-spatial-data">HM Land Registry</a>. &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>. <br>&copy; Crown copyright and database rights 2019 Ordnance Survey 100026316.',
+      attribution: 'Reproduced with permission of <a href="https://www.gov.uk/guidance/inspire-index-polygons-spatial-data">HM Land Registry</a>. &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>. &copy; Crown copyright and database rights 2019 Ordnance Survey 100026316.',
       id: 'mapbox.streets',
       withPopup: L.latLng(51.7410, -1.2786),
       withTooltip: L.latLng(47.414220, -1.250482),
